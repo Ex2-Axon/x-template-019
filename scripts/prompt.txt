@@ -1,0 +1,158 @@
+You are building a daily UI project. Below is the theme specification for today.
+
+## Theme Context (daily-context.json)
+```json
+{
+  "day": 19,
+  "date": "2026-05-30",
+  "version": "1.19.0",
+  "project_name": "x-template-019",
+  "theme": {
+    "name": "Velvet Aura",
+    "style": "Dark luxury, soft gradients, modern opulence",
+    "mood": "luxurious, serene, elegant, deep"
+  },
+  "palette": {
+    "background": "#1A0A2E",
+    "surface": "#2F1A4A",
+    "primary": "#A38B4B",
+    "accent": "#C5A3FF",
+    "text": "#E0DDF0",
+    "muted": "#A09BBF"
+  },
+  "typography": {
+    "heading": "Playfair Display",
+    "body": "Lato",
+    "size": "medium"
+  },
+  "layout": {
+    "structure": "centered",
+    "density": "spacious",
+    "border_style": "subtle glow, rounded corners"
+  },
+  "animation": {
+    "level": "moderate",
+    "style": "soft fade, subtle glow on hover"
+  },
+  "components": {
+    "hero_text": "LUXURY UNFOLDED",
+    "subtitle": "Experience a realm where elegance meets serene depth.",
+    "button_label": "Explore Collection",
+    "badge_text": "Exclusive"
+  },
+  "commit_message": "feat: UI Day 19 — Velvet Aura",
+  "source": "gemini-key1",
+  "selected_component": {
+    "category": "Buttons",
+    "component": "vinodjangid07_average-pig-54.html",
+    "path": "C:\\Users\\User\\Documents\\GitHub\\Axon\\x-components\\Buttons\\vinodjangid07_average-pig-54.html",
+    "content": "<button class=\"button\">\n  <span class=\"bracket left\">❴</span>\n  <span class=\"text\">Code</span>\n  <span class=\"bracket right\">❵</span>\n</button>\n\n<style>\n/* Tags: animation, black, button, code, hover effect */\n.button {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 5px;\n  height: 45px;\n  width: 45px;\n  border: none;\n  border-radius: 10px;\n  background-color: black;\n  cursor: pointer;\n  transition: all 0.3s;\n  overflow: hidden;\n}\n.bracket {\n  font-size: 18px;\n  transition: all 0.3s;\n  color: rgb(182, 104, 255);\n}\n.text {\n  font-size: 15px;\n  width: 0;\n  transform: scale(0);\n  transition: all 0.3s;\n  color: white;\n}\n.button:hover {\n  width: 100px;\n}\n.button:hover .text {\n  transform: scale(1);\n  width: 40px;\n}\n\n</style>"
+  }
+}
+```
+
+## Selected Component Reference
+- Category: Buttons
+- Component: vinodjangid07_average-pig-54.html
+- Path: C:\Users\User\Documents\GitHub\Axon\x-components\Buttons\vinodjangid07_average-pig-54.html
+
+Use the selected component HTML below as the primary design reference for the new UI. Keep the structure and styling assumptions in mind while rewriting the requested files.
+```html
+<button class="button">
+  <span class="bracket left">❴</span>
+  <span class="text">Code</span>
+  <span class="bracket right">❵</span>
+</button>
+
+<style>
+/* Tags: animation, black, button, code, hover effect */
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: 45px;
+  width: 45px;
+  border: none;
+  border-radius: 10px;
+  background-color: black;
+  cursor: pointer;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+.bracket {
+  font-size: 18px;
+  transition: all 0.3s;
+  color: rgb(182, 104, 255);
+}
+.text {
+  font-size: 15px;
+  width: 0;
+  transform: scale(0);
+  transition: all 0.3s;
+  color: white;
+}
+.button:hover {
+  width: 100px;
+}
+.button:hover .text {
+  transform: scale(1);
+  width: 40px;
+}
+
+</style>
+```
+
+## Your Task
+Completely redesign the UI by rewriting these three files from scratch:
+- `src/App.tsx`
+- `src/App.css`
+- `src/index.css`
+
+## Rules for App.tsx
+1. Keep ALL existing imports:
+   - `import { useState, useEffect, useRef } from 'react'`
+   - `import reactLogo from './assets/react.svg'`
+   - `import viteLogo from './assets/vite.svg'`
+   - `import heroImg from './assets/hero.png'`
+   - `import './App.css'`
+2. Keep the `CounterNum` component (useRef + useEffect animation)
+3. Keep the counter button with `onClick` / `setCount` handler
+4. Keep the Documentation section (Vite/React links)
+5. Keep the Social section (GitHub/Discord/X/Bluesky links + SVG icons)
+6. Do NOT use CSS custom properties (`--var-name`) in inline `style` attributes — TypeScript will error
+
+## Rules for CSS
+- Apply the palette, typography, layout structure, animation level, and component text from the JSON above
+- Use Google Fonts via `@import` in `index.css`
+- Match the theme mood: luxurious, serene, elegant, deep
+
+## Mandatory Requirements (apply to every build)
+
+### 1. Responsive — Mobile First
+- Design for mobile (320px) first, scale up with `min-width` breakpoints
+- Touch targets minimum 44×44px
+- No horizontal scroll on any screen size
+- Fluid typography: use `clamp()` or responsive units (`rem`, `%`, `vw`)
+- Images and layout must reflow gracefully at 320px, 768px, 1280px
+
+### 2. Footer Copyright
+- The page MUST have a `<footer>` at the bottom
+- Footer text: `© 2026 Microtronic. All rights reserved.`
+- Style the footer to match the theme palette (muted text on surface background)
+
+### 3. SEO Standards
+- `index.html` must have a descriptive `<title>`: `LUXURY UNFOLDED — Velvet Aura | Microtronic`
+- Add `<meta name="description">` with the subtitle: `Experience a realm where elegance meets serene depth.`
+- Add `<meta name="keywords">` relevant to the theme
+- Add Open Graph tags: `og:title`, `og:description`, `og:type` (website)
+- All images must have meaningful `alt` attributes
+- Use semantic HTML: `<header>`, `<main>`, `<section>`, `<footer>`, `<nav>` where appropriate
+- Heading hierarchy: one `<h1>` (hero), `<h2>` for sections — no skipping levels
+
+## After saving all files
+1. Update `version` in `package.json` to `1.19.0`
+2. Update `<title>` and meta tags in `index.html` as specified above
+3. Run: `pnpm build`
+4. If build succeeds → write `done` to `scripts/build-done.flag`
+5. If build fails with TypeScript errors → fix them and rebuild
